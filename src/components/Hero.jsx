@@ -241,7 +241,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg sm:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          We help students with admissions, visas, housing, and career support —
+          We help our students with admissions, visas, housing, and career support —
           turning the dream of studying abroad into a clear, guided journey.
         </motion.p>
 
