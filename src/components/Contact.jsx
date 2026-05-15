@@ -57,7 +57,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 sm:py-28 bg-[#F8FAFC]" ref={ref}>
+    <section id="contact" className="py-16 sm:py-28 bg-[#071428]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -68,8 +68,8 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <span className="section-label">Get In Touch</span>
-          <h2 className="section-title mt-3 mb-5">Start Your Journey Today</h2>
-          <p className="section-subtitle">
+          <h2 className="section-title-white mt-3 mb-5">Start Your Journey Today</h2>
+          <p className="section-subtitle-white">
             Ready to study abroad? Our advisors are here to answer every question and guide you every step of the way.
           </p>
         </motion.div>
@@ -83,10 +83,10 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
             className="lg:col-span-2"
           >
-            <h3 className="text-2xl font-bold text-[#0B1F3B] font-poppins mb-3">
+            <h3 className="text-2xl font-bold text-white font-poppins mb-3">
               Let's talk about your future
             </h3>
-            <p className="text-gray-500 mb-8 leading-relaxed text-sm">
+            <p className="text-white/60 mb-8 leading-relaxed text-sm">
               Whether you have questions about a specific country, need help with documents, or
               want to understand the full process — we're here to guide you.
             </p>
@@ -102,18 +102,18 @@ export default function Contact() {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-0.5">
+                    <div className="text-xs text-white/45 font-medium uppercase tracking-wider mb-0.5">
                       {item.label}
                     </div>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-[#0B1F3B] font-semibold hover:text-[#F5B301] transition-colors text-sm"
+                        className="text-white/85 font-semibold hover:text-[#F5B301] transition-colors text-sm"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span className="text-[#0B1F3B] font-semibold text-sm">{item.value}</span>
+                      <span className="text-white/85 font-semibold text-sm">{item.value}</span>
                     )}
                   </div>
                 </div>

@@ -10,7 +10,7 @@ export default function Countries() {
   const navigate = useNavigate()
 
   return (
-    <section id="countries" className="py-16 sm:py-28 bg-[#F8FAFC]" ref={ref}>
+    <section id="countries" className="py-16 sm:py-28 bg-[#071428]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
@@ -21,8 +21,8 @@ export default function Countries() {
           className="text-center mb-16"
         >
           <span className="section-label">Destinations</span>
-          <h2 className="section-title mt-3 mb-5">Choose Your Country</h2>
-          <p className="section-subtitle">
+          <h2 className="section-title-white mt-3 mb-5">Choose Your Country</h2>
+          <p className="section-subtitle-white">
             Explore our supported destinations and find the perfect match for your academic journey.
           </p>
         </motion.div>

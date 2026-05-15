@@ -25,7 +25,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="py-16 sm:py-28 bg-[#F8FAFC]" ref={ref}>
+    <section id="about" className="py-16 sm:py-28 bg-[#071428]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
@@ -74,22 +74,23 @@ export default function About() {
           >
             <span className="section-label">Our Story</span>
 
-            <h2 className="section-title mt-3 mb-6">
+            <h2 className="section-title-white mt-3 mb-6">
               Two Partners,{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0B1F3B] to-[#2d5590]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5B301] to-amber-300">
                 One Mission
               </span>
             </h2>
 
-            <p className="text-gray-600 leading-relaxed mb-5 text-[15px]">
+            <p className="text-white/65 leading-relaxed mb-5 text-[15px]">
               Apply Admission was founded by two partners who went through the challenging journey
               of studying abroad themselves. Having faced every hurdle — from confusing paperwork
               to housing stress — they built this agency to make that path clear and guided for others.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-10 text-[15px]">
+            <p className="text-white/65 leading-relaxed mb-10 text-[15px]">
               Today, we're a dedicated consultancy committed to walking students through every stage:
               university selection, admission applications, visa processing, accommodation, and
               career support. We treat every student's dream as our personal responsibility.
+
             </p>
 
             {/* Values list */}
@@ -106,8 +107,8 @@ export default function About() {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="font-bold text-[#0B1F3B] mb-1">{item.title}</div>
-                    <div className="text-gray-500 text-sm leading-relaxed">{item.desc}</div>
+                    <div className="font-bold text-white mb-1">{item.title}</div>
+                    <div className="text-white/55 text-sm leading-relaxed">{item.desc}</div>
                   </div>
                 </motion.div>
               ))}

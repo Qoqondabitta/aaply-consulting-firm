@@ -3,12 +3,13 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Home',      href: '/#home',      section: 'home' },
-  { label: 'About',     href: '/#about',     section: 'about' },
-  { label: 'Services',  href: '/#services',  section: 'services' },
-  { label: 'Countries', href: '/#countries', section: 'countries' },
-  { label: 'Pricing',   href: '/#pricing',   section: 'pricing' },
-  { label: 'Contact',   href: '/#contact',   section: 'contact' },
+  { label: 'Home',         href: '/#home',         section: 'home' },
+  { label: 'About',        href: '/#about',        section: 'about' },
+  { label: 'Services',     href: '/#services',     section: 'services' },
+  { label: 'Countries',    href: '/#countries',    section: 'countries' },
+  { label: 'Pricing',      href: '/#pricing',      section: 'pricing' },
+  { label: 'Requirements', href: '/#requirements', section: 'requirements' },
+  { label: 'Contact',      href: '/#contact',      section: 'contact' },
 ]
 
 export default function Navbar() {
@@ -91,7 +92,7 @@ export default function Navbar() {
           </Link>
 
           {/* ── Desktop links ── */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
             {navLinks.map((link) => {
               const isActive = isOnHome && activeSection === link.section
               return (
