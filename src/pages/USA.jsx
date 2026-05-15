@@ -31,7 +31,7 @@ export default function USA() {
         'Statement of Purpose / Motivational Letter',
         'Reference Letters (2–3)',
         'SAT/ACT Scores (if applicable)',
-        'English Proficiency (TOEFL/IELTS)',
+        'Language Certificate (TOEFL/IELTS)',
         'Financial Sponsorship Documents',
       ]}
     />

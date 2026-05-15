@@ -56,7 +56,11 @@ export default function Countries() {
                 <span className={`${c.tagColor} text-xs font-bold px-3 py-1.5 rounded-full shadow-lg`}>
                   {c.tag}
                 </span>
-                <span className="text-3xl drop-shadow-lg">{c.flag}</span>
+                <img
+                  src={`https://flagcdn.com/w40/${c.flagCode}.png`}
+                  alt={`${c.name} flag`}
+                  className="w-9 h-6 object-cover rounded shadow-lg"
+                />
               </div>
 
               {/* Bottom content */}

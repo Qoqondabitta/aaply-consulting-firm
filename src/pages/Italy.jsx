@@ -26,6 +26,7 @@ export default function Italy() {
         'Motivational Letter',
         'Reference Letters',
         'Passport-size Photos',
+        'Language Certificate (IELTS/TOEFL/Italian B2)',
         'Proof of Financial Means',
         'Health Insurance',
       ]}

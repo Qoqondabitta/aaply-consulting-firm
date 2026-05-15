@@ -34,6 +34,7 @@ export default function Poland() {
         'Motivational Letter',
         'Reference Letters',
         'Passport-size Photos',
+        'Language Certificate (IELTS/TOEFL)',
         'Bank Statement (for visa)',
         'Health Insurance',
       ]}

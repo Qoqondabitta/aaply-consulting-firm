@@ -3,24 +3,49 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Home',      href: '/#home' },
-  { label: 'About',     href: '/#about' },
-  { label: 'Services',  href: '/#services' },
-  { label: 'Countries', href: '/#countries' },
-  { label: 'Pricing',   href: '/#pricing' },
-  { label: 'Contact',   href: '/#contact' },
+  { label: 'Home',      href: '/#home',      section: 'home' },
+  { label: 'About',     href: '/#about',     section: 'about' },
+  { label: 'Services',  href: '/#services',  section: 'services' },
+  { label: 'Countries', href: '/#countries', section: 'countries' },
+  { label: 'Pricing',   href: '/#pricing',   section: 'pricing' },
+  { label: 'Contact',   href: '/#contact',   section: 'contact' },
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled]   = useState(false)
-  const [menuOpen, setMenuOpen]   = useState(false)
+  const [scrolled,       setScrolled]       = useState(false)
+  const [menuOpen,       setMenuOpen]       = useState(false)
+  const [activeSection,  setActiveSection]  = useState('home')
   const location = useLocation()
 
+  /* Scrolled state — adds solid navy bg */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30)
-    window.addEventListener('scroll', onScroll)
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  /* Scroll-spy — track which section occupies the middle of the viewport */
+  useEffect(() => {
+    if (location.pathname !== '/') return
+
+    const options = { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+    const cb = (entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) setActiveSection(e.target.id) })
+    }
+
+    const observers = navLinks
+      .map(({ section }) => {
+        const el = document.getElementById(section)
+        if (!el) return null
+        const obs = new IntersectionObserver(cb, options)
+        obs.observe(el)
+        return obs
+      })
+      .filter(Boolean)
+
+    return () => observers.forEach((obs) => obs.disconnect())
+  }, [location.pathname])
 
   const handleNavClick = (e, href) => {
     if (href.startsWith('/#')) {
@@ -37,6 +62,8 @@ export default function Navbar() {
     }
   }
 
+  const isOnHome = location.pathname === '/'
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -45,7 +72,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-[#0B1F3B]/96 backdrop-blur-xl shadow-navy-lg border-b border-white/8'
-          : 'bg-transparent'
+          : 'bg-gradient-to-b from-black/55 via-black/20 to-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,19 +90,28 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* ── Desktop Links ── */}
+          {/* ── Desktop links ── */}
           <div className="hidden md:flex items-center gap-7">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="relative text-sm font-medium text-white/75 hover:text-white transition-colors duration-200 group py-1"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-px bg-[#F5B301] group-hover:w-full transition-all duration-300" />
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = isOnHome && activeSection === link.section
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`relative text-sm font-medium transition-colors duration-200 group py-1 ${
+                    isActive ? 'text-[#F5B301]' : 'text-white/75 hover:text-white'
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute bottom-0 left-0 h-px bg-[#F5B301] transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </a>
+              )
+            })}
 
             <a
               href="/#contact"
@@ -125,16 +161,24 @@ export default function Navbar() {
             className="md:hidden bg-[#0B1F3B] border-t border-white/10 overflow-hidden"
           >
             <div className="px-5 py-6 space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="flex items-center text-white/75 hover:text-[#F5B301] font-medium py-3 border-b border-white/8 transition-colors text-sm"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = isOnHome && activeSection === link.section
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`flex items-center gap-2 font-medium py-3 border-b border-white/8 transition-colors text-sm ${
+                      isActive ? 'text-[#F5B301]' : 'text-white/75 hover:text-[#F5B301]'
+                    }`}
+                  >
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 bg-[#F5B301] rounded-full shrink-0" />
+                    )}
+                    {link.label}
+                  </a>
+                )
+              })}
               <div className="pt-4">
                 <a
                   href="/#contact"

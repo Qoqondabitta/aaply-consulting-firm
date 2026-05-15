@@ -31,7 +31,7 @@ export default function Canada() {
         'Academic Transcripts',
         'Motivational Letter',
         'Reference Letters',
-        'English Proficiency (IELTS/TOEFL)',
+        'Language Certificate (IELTS/TOEFL)',
         'Proof of Financial Support',
         'Medical Exam (if required)',
       ]}

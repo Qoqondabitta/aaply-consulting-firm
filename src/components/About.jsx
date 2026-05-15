@@ -57,8 +57,8 @@ export default function About() {
                 <FaStar className="text-[#0B1F3B] text-2xl" />
               </div>
               <div>
-                <div className="text-3xl font-black text-[#0B1F3B] font-poppins leading-none">95%</div>
-                <div className="text-sm text-gray-500 mt-1 font-medium">Visa Success Rate</div>
+                <div className="text-lg font-bold text-[#0B1F3B] font-poppins leading-none">✓</div>
+                <div className="text-sm text-gray-500 mt-1 font-medium">Visa Assistance</div>
               </div>
             </motion.div>
 

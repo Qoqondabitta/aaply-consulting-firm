@@ -6,38 +6,38 @@ import { FaCheck } from 'react-icons/fa'
 const plans = [
   {
     country:  'Italy',
-    flag:     '🇮🇹',
+    flagCode: 'it',
     price:    '$650',
     path:     '/italy',
     features: ['University Admission', 'Visa Application', 'Document Review', 'Email Support'],
   },
   {
     country:  'Germany',
-    flag:     '🇩🇪',
+    flagCode: 'de',
     price:    '$650',
     path:     '/germany',
     features: ['University Admission', 'Visa Application', 'Document Review', 'Email Support'],
   },
   {
     country:  'USA',
-    flag:     '🇺🇸',
+    flagCode: 'us',
     price:    '$550',
     subtext:  'Visa: $100 initial + $900 after approval',
     path:     '/usa',
     features: ['5 University Applications', 'Visa Preparation', 'Interview Coaching', 'Post-Approval Support'],
   },
   {
-    country:       'Poland',
-    flag:          '🇵🇱',
-    price:         '$750',
-    path:          '/poland',
-    features:      ['University Admission', 'Visa Application', 'Job Assistance*', 'Housing Assistance*'],
-    highlighted:   true,
-    highlightLabel:'Most Popular',
+    country:        'Poland',
+    flagCode:       'pl',
+    price:          '$750',
+    path:           '/poland',
+    features:       ['University Admission', 'Visa Application', 'Job Assistance*', 'Housing Assistance*'],
+    highlighted:    true,
+    highlightLabel: 'Most Popular',
   },
   {
     country:  'Hungary',
-    flag:     '🇭🇺',
+    flagCode: 'hu',
     price:    '$500 – $1,000',
     subtext:  'Opening November Intake',
     path:     '/hungary',
@@ -46,7 +46,7 @@ const plans = [
   },
   {
     country:  'Canada',
-    flag:     '🇨🇦',
+    flagCode: 'ca',
     price:    '$2,000',
     subtext:  'Full-service package',
     path:     '/canada',
@@ -111,8 +111,14 @@ export default function Pricing() {
                 </div>
               )}
 
-              {/* Flag + country */}
-              <div className="text-3xl mb-4">{plan.flag}</div>
+              {/* Flag image + country */}
+              <div className="mb-4">
+                <img
+                  src={`https://flagcdn.com/w40/${plan.flagCode}.png`}
+                  alt={`${plan.country} flag`}
+                  className="w-10 h-7 object-cover rounded shadow-md"
+                />
+              </div>
               <h3 className={`text-xl font-bold font-poppins mb-1 ${plan.highlighted ? 'text-[#0B1F3B]' : 'text-white'}`}>
                 {plan.country}
               </h3>
@@ -134,7 +140,7 @@ export default function Pricing() {
                     <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
                       plan.highlighted ? 'bg-[#0B1F3B]' : 'bg-[#F5B301]/20'
                     }`}>
-                      <FaCheck className={`text-[8px] ${plan.highlighted ? 'text-[#F5B301]' : 'text-[#F5B301]'}`} />
+                      <FaCheck className="text-[8px] text-[#F5B301]" />
                     </div>
                     <span className={plan.highlighted ? 'text-[#0B1F3B]/85' : 'text-white/65'}>{f}</span>
                   </li>

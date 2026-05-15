@@ -33,7 +33,7 @@ export default function Hungary() {
         'Academic Transcripts',
         'Motivational Letter',
         'Reference Letters',
-        'Language Proficiency (English or Hungarian)',
+        'Language Certificate (IELTS/TOEFL/equivalent)',
         'Passport-size Photos',
         'Medical Certificate',
       ]}

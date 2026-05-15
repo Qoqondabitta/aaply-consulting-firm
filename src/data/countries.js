@@ -7,6 +7,7 @@ export const COUNTRIES = [
   {
     name:     'Poland',
     flag:     '🇵🇱',
+    flagCode: 'pl',
     path:     '/poland',
     image:    'https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=800&q=85',
     price:    '$750',
@@ -17,6 +18,7 @@ export const COUNTRIES = [
   {
     name:     'Italy',
     flag:     '🇮🇹',
+    flagCode: 'it',
     path:     '/italy',
     image:    'https://images.unsplash.com/photo-1525874684015-58379d421a52?w=800&q=85',
     price:    '$650',
@@ -27,6 +29,7 @@ export const COUNTRIES = [
   {
     name:     'Germany',
     flag:     '🇩🇪',
+    flagCode: 'de',
     path:     '/germany',
     image:    'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=85',
     price:    '$650',
@@ -37,6 +40,7 @@ export const COUNTRIES = [
   {
     name:     'Hungary',
     flag:     '🇭🇺',
+    flagCode: 'hu',
     path:     '/hungary',
     image:    'https://images.unsplash.com/photo-1551867633-194f125bddfa?w=800&q=85',
     price:    'From $500',
@@ -47,6 +51,7 @@ export const COUNTRIES = [
   {
     name:     'USA',
     flag:     '🇺🇸',
+    flagCode: 'us',
     path:     '/usa',
     image:    'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=85',
     price:    '$550 + Visa',
@@ -57,6 +62,7 @@ export const COUNTRIES = [
   {
     name:     'Canada',
     flag:     '🇨🇦',
+    flagCode: 'ca',
     path:     '/canada',
     image:    'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&q=85',
     price:    '$2,000',

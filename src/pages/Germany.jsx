@@ -27,6 +27,7 @@ export default function Germany() {
         'Reference Letters',
         'Passport-size Photos',
         'Blocked Account Proof (€11,208/year)',
+        'Language Certificate (IELTS/TOEFL for English programs)',
         'German Language Proof (if applicable)',
       ]}
     />
