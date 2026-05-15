@@ -10,7 +10,7 @@ export default function Countries() {
   const navigate = useNavigate()
 
   return (
-    <section id="countries" className="py-28 bg-[#F8FAFC]" ref={ref}>
+    <section id="countries" className="py-16 sm:py-28 bg-[#F8FAFC]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
@@ -36,7 +36,7 @@ export default function Countries() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.08 }}
               onClick={() => navigate(c.path)}
-              className="group relative h-[390px] rounded-3xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
+              className="group relative h-[280px] sm:h-[390px] rounded-3xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
             >
               {/* Full-bleed image */}
               <img

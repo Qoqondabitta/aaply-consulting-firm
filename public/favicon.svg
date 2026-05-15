@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0B1F3B"/>
+  <!-- Mortarboard top (diamond) -->
+  <polygon points="16,5 29,11 16,17 3,11" fill="#F5B301"/>
+  <!-- Cap body -->
+  <path d="M9 13.5 L9 20 C9 22.5 12.1 24.5 16 24.5 C19.9 24.5 23 22.5 23 20 L23 13.5 L16 17 Z" fill="#F5B301" opacity="0.88"/>
+  <!-- Tassel string -->
+  <line x1="29" y1="11" x2="29" y2="19" stroke="#F5B301" stroke-width="2" stroke-linecap="round"/>
+  <!-- Tassel end -->
+  <circle cx="29" cy="20.5" r="1.8" fill="#F5B301"/>
+</svg>

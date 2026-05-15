@@ -25,9 +25,9 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="py-28 bg-[#F8FAFC]" ref={ref}>
+    <section id="about" className="py-16 sm:py-28 bg-[#F8FAFC]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* ── Image column ── */}
           <motion.div
@@ -40,7 +40,7 @@ export default function About() {
               <img
                 src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80"
                 alt="Students graduating"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[240px] sm:h-[500px] object-cover"
               />
               {/* Overlay tint */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3B]/30 to-transparent" />
@@ -51,7 +51,7 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-4 border border-gray-100"
+              className="hidden sm:flex absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 items-center gap-4 border border-gray-100"
             >
               <div className="w-14 h-14 bg-[#F5B301] rounded-xl flex items-center justify-center shrink-0 shadow-gold">
                 <FaStar className="text-[#0B1F3B] text-2xl" />
@@ -63,7 +63,7 @@ export default function About() {
             </motion.div>
 
             {/* Decorative gold border accent */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-4 border-[#F5B301] rounded-2xl opacity-30" />
+            <div className="hidden sm:block absolute -top-4 -left-4 w-24 h-24 border-4 border-[#F5B301] rounded-2xl opacity-30" />
           </motion.div>
 
           {/* ── Text column ── */}

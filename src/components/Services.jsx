@@ -40,7 +40,7 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="services" className="py-28 bg-[#0B1F3B] relative overflow-hidden" ref={ref}>
+    <section id="services" className="py-16 sm:py-28 bg-[#0B1F3B] relative overflow-hidden" ref={ref}>
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#F5B301]/4 to-transparent pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-600/8 rounded-full blur-3xl pointer-events-none" />

@@ -113,7 +113,7 @@ export default function Hero() {
                */}
               <div
                 key={isActive ? `kb-${current}` : `bg-${i}`}
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 bg-cover bg-no-repeat [background-position:50%_35%] sm:bg-center"
                 style={{
                   backgroundImage: `url('${slide.url}')`,
                   animation: isActive
@@ -169,7 +169,7 @@ export default function Hero() {
       {/* ══════════════════════════════════════════════════════════
           CONTENT
       ══════════════════════════════════════════════════════════ */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto pt-24 pb-36">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto pt-20 pb-24 sm:pt-24 sm:pb-36">
 
         {/* Status badge */}
         <motion.div
@@ -193,18 +193,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 45 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white leading-[1.08] mb-7 font-poppins"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold text-white leading-[1.08] mb-7 font-poppins"
         >
           Your Gateway to{' '}
           <br className="hidden sm:block" />
           Studying in{' '}
 
           {/*
-           * "Abroad" is replaced by the current country name.
-           * AnimatePresence mode="wait" ensures the old name exits
-           * completely before the new one enters — clean word swap.
-           * minWidth locks the container to the longest country name
-           * (Germany/Hungary = 7 chars) so "Studying in" never shifts.
+           * Container min-width = longest country name (Germany/Hungary)
+           * so "Studying in" never shifts when shorter names appear.
+           * Underline is nested inside the text span so left-0/right-0
+           * are relative to the word itself — not the min-width container.
            */}
           <span className="relative inline-block" style={{ minWidth: '4.5em', textAlign: 'left' }}>
             <AnimatePresence mode="wait">
@@ -214,22 +213,17 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0,  filter: 'blur(0px)' }}
                 exit={{   opacity: 0, y: -18, filter: 'blur(6px)' }}
                 transition={{ duration: 0.55, ease: 'easeInOut' }}
-                className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#F5B301] via-amber-300 to-[#F5B301] bg-[length:200%] animate-[shimmer_3s_linear_infinite]"
+                className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#F5B301] via-amber-300 to-[#F5B301] bg-[length:200%] animate-[shimmer_3s_linear_infinite]"
               >
                 {SLIDES[current].country}
+                {/* Underline hugs the word — not the min-width container */}
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+                  className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-[#F5B301]/0 via-[#F5B301] to-[#F5B301]/0 origin-left rounded-full"
+                />
               </motion.span>
-            </AnimatePresence>
-
-            {/* Gold underline — redraws on each new country */}
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={`line-${current}`}
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                exit={{ scaleX: 0 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-[#F5B301]/0 via-[#F5B301] to-[#F5B301]/0 origin-left rounded-full"
-              />
             </AnimatePresence>
           </span>
         </motion.h1>
@@ -239,7 +233,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg sm:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-xl text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed"
         >
           We help our students with admissions, visas, housing, and career support —
           turning the dream of studying abroad into a clear, guided journey.
@@ -250,7 +244,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-10 sm:mb-20"
         >
           <motion.button
             whileHover={{ scale: 1.04 }}
@@ -284,7 +278,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65 + i * 0.1 }}
               whileHover={{ y: -3 }}
-              className="flex items-center gap-3.5 bg-white/[0.1] backdrop-blur-md border border-white/[0.2] rounded-2xl px-6 py-4 min-w-[170px] cursor-default"
+              className="flex items-center gap-3.5 bg-white/[0.1] backdrop-blur-md border border-white/[0.2] rounded-2xl px-5 py-3.5 sm:px-6 sm:py-4 w-full sm:w-auto sm:min-w-[170px] cursor-default"
             >
               <div className="w-11 h-11 bg-[#F5B301]/20 border border-[#F5B301]/35 rounded-xl flex items-center justify-center text-[#F5B301] text-lg shrink-0">
                 {stat.icon}

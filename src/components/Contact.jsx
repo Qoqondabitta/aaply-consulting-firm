@@ -57,7 +57,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-28 bg-[#F8FAFC]" ref={ref}>
+    <section id="contact" className="py-16 sm:py-28 bg-[#F8FAFC]" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -74,7 +74,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
 
           {/* ── Left: contact info ── */}
           <motion.div
@@ -135,7 +135,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-3 bg-white rounded-3xl shadow-navy-lg p-8 border border-gray-100"
+            className="lg:col-span-3 bg-white rounded-3xl shadow-navy-lg p-5 sm:p-8 border border-gray-100"
           >
             <h3 className="text-xl font-bold text-[#0B1F3B] font-poppins mb-7">
               Send us a message

@@ -80,7 +80,7 @@ export default function CountryPage({
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-8xl mb-6 drop-shadow-2xl"
+            className="text-6xl sm:text-8xl mb-6 drop-shadow-2xl"
           >
             {flag}
           </motion.div>
@@ -89,7 +89,7 @@ export default function CountryPage({
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold text-white font-poppins mb-5 leading-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-white font-poppins mb-5 leading-tight"
           >
             Study in{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5B301] to-amber-300">
@@ -135,9 +135,9 @@ export default function CountryPage({
       {/* ══════════════════════════════════════════
           OVERVIEW — split layout
       ══════════════════════════════════════════ */}
-      <section className="py-28 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-28 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* Image */}
             <motion.div
@@ -151,13 +151,13 @@ export default function CountryPage({
                 <img
                   src={overviewImage || heroImage}
                   alt={`Study in ${name}`}
-                  className="w-full h-[440px] object-cover"
+                  className="w-full h-[220px] sm:h-[440px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3B]/25 to-transparent" />
               </div>
               {/* Gold accent frame */}
-              <div className="absolute -top-4 -left-4 w-20 h-20 border-4 border-[#F5B301] rounded-2xl opacity-40" />
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#F5B301] rounded-2xl opacity-15" />
+              <div className="hidden sm:block absolute -top-4 -left-4 w-20 h-20 border-4 border-[#F5B301] rounded-2xl opacity-40" />
+              <div className="hidden sm:block absolute -bottom-4 -right-4 w-16 h-16 bg-[#F5B301] rounded-2xl opacity-15" />
             </motion.div>
 
             {/* Text */}
@@ -200,7 +200,7 @@ export default function CountryPage({
       {/* ══════════════════════════════════════════
           SERVICES INCLUDED — icon grid
       ══════════════════════════════════════════ */}
-      <section className="py-28 bg-[#0B1F3B] relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-[#0B1F3B] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#F5B301]/4 to-transparent" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -261,7 +261,7 @@ export default function CountryPage({
       {/* ══════════════════════════════════════════
           PRICING — highlight box
       ══════════════════════════════════════════ */}
-      <section className="py-28 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-28 bg-[#F8FAFC]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -280,20 +280,20 @@ export default function CountryPage({
             className="bg-white rounded-3xl shadow-navy-lg overflow-hidden border border-gray-100"
           >
             {/* Header strip */}
-            <div className="bg-[#0B1F3B] px-8 py-6 flex items-center justify-between">
+            <div className="bg-[#0B1F3B] px-5 py-4 sm:px-8 sm:py-6 flex items-center justify-between">
               <div>
                 <div className="text-[#F5B301] text-sm font-semibold uppercase tracking-wider mb-1">
                   {name} Package
                 </div>
-                <div className="text-white text-3xl font-black font-poppins">
+                <div className="text-white text-2xl sm:text-3xl font-black font-poppins">
                   {pricing.find((p) => p.total)?.value ?? '—'}
                 </div>
               </div>
-              <div className="text-5xl">{flag}</div>
+              <div className="text-3xl sm:text-5xl">{flag}</div>
             </div>
 
             {/* Line items */}
-            <div className="px-8 py-2">
+            <div className="px-4 sm:px-8 py-2">
               {pricing.filter((p) => !p.total).map((p, i, arr) => (
                 <div
                   key={p.label}
@@ -312,7 +312,7 @@ export default function CountryPage({
 
             {/* Total row */}
             {pricing.find((p) => p.total) && (
-              <div className="mx-8 mb-6 bg-[#F5B301]/10 border border-[#F5B301]/30 rounded-2xl px-6 py-4 flex items-center justify-between">
+              <div className="mx-4 sm:mx-8 mb-6 bg-[#F5B301]/10 border border-[#F5B301]/30 rounded-2xl px-4 sm:px-6 py-4 flex items-center justify-between">
                 <span className="font-bold text-[#0B1F3B]">Total Agency Fee</span>
                 <span className="font-black text-[#0B1F3B] text-2xl font-poppins">
                   {pricing.find((p) => p.total)?.value}
@@ -320,7 +320,7 @@ export default function CountryPage({
               </div>
             )}
 
-            <div className="px-8 pb-8">
+            <div className="px-4 sm:px-8 pb-6 sm:pb-8">
               <button
                 onClick={scrollToContact}
                 className="btn-primary w-full py-4 text-[15px]"
@@ -336,7 +336,7 @@ export default function CountryPage({
           REQUIREMENTS — checklist
       ══════════════════════════════════════════ */}
       <section
-        className="py-28 relative overflow-hidden"
+        className="py-16 sm:py-28 relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #071428 0%, #0B1F3B 60%, #132d55 100%)' }}
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#F5B301]/30 to-transparent" />
@@ -379,7 +379,7 @@ export default function CountryPage({
       {/* ══════════════════════════════════════════
           FINAL CTA
       ══════════════════════════════════════════ */}
-      <section className="py-28 bg-[#F8FAFC] relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-[#F8FAFC] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0B1F3B]/4 via-transparent to-[#F5B301]/4" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div
@@ -387,7 +387,7 @@ export default function CountryPage({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="text-6xl mb-6">{flag}</div>
+            <div className="text-4xl sm:text-6xl mb-6">{flag}</div>
             <h2 className="section-title mb-5">Ready to Study in {name}?</h2>
             <p className="section-subtitle mb-10">
               Take the first step today. Our consultants will guide you through every part of
