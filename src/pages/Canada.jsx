@@ -5,6 +5,7 @@ export default function Canada() {
     <CountryPage
       name="Canada"
       flag="🇨🇦"
+      flagCode="ca"
       heroImage="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1920&q=80"
       overviewImage="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=900&q=80"
       tagline="Full-service package covering admission, visa processing, and initial settlement support."

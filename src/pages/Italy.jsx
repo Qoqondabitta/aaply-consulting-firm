@@ -5,6 +5,7 @@ export default function Italy() {
     <CountryPage
       name="Italy"
       flag="🇮🇹"
+      flagCode="it"
       heroImage="https://images.unsplash.com/photo-1525874684015-58379d421a52?w=1920&q=80"
       overviewImage="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=900&q=80"
       tagline="Study in the birthplace of the Renaissance — world-class universities, art, and timeless culture."

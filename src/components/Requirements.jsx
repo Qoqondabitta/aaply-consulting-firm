@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { FaFileAlt, FaGraduationCap, FaPen, FaUserTie, FaArrowRight } from 'react-icons/fa'
+import { FaFileAlt, FaGraduationCap, FaPen, FaUserTie, FaGlobe, FaArrowRight } from 'react-icons/fa'
 
 const requirements = [
   {
@@ -26,6 +26,12 @@ const requirements = [
     title: 'Reference Letters',
     desc:  'Recommendations from teachers, professors, or employers who can vouch for your character.',
     color: 'from-amber-500 to-orange-600',
+  },
+  {
+    icon:  <FaGlobe className="text-2xl" />,
+    title: 'Language Certificate',
+    desc:  'Official proof of language proficiency such as IELTS, TOEFL, or an equivalent recognized certificate.',
+    color: 'from-sky-500 to-cyan-700',
   },
 ]
 
@@ -62,7 +68,7 @@ export default function Requirements() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {requirements.map((r, i) => (
             <motion.div
               key={r.title}

@@ -29,6 +29,7 @@ const gradients = [
 export default function CountryPage({
   name,
   flag,
+  flagCode,
   heroImage,
   overviewImage,
   tagline,
@@ -80,9 +81,13 @@ export default function CountryPage({
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-6xl sm:text-8xl mb-6 drop-shadow-2xl"
+            className="mb-6"
           >
-            {flag}
+            <img
+              src={`https://flagcdn.com/w80/${flagCode}.png`}
+              alt={`${name} flag`}
+              className="w-24 h-16 sm:w-32 sm:h-[86px] object-cover rounded-xl shadow-2xl mx-auto"
+            />
           </motion.div>
 
           <motion.h1
@@ -289,7 +294,11 @@ export default function CountryPage({
                   {pricing.find((p) => p.total)?.value ?? '—'}
                 </div>
               </div>
-              <div className="text-3xl sm:text-5xl">{flag}</div>
+              <img
+                src={`https://flagcdn.com/w40/${flagCode}.png`}
+                alt={`${name} flag`}
+                className="w-12 h-8 sm:w-16 sm:h-[43px] object-cover rounded-lg shadow-md"
+              />
             </div>
 
             {/* Line items */}
@@ -387,7 +396,11 @@ export default function CountryPage({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="text-4xl sm:text-6xl mb-6">{flag}</div>
+            <img
+              src={`https://flagcdn.com/w80/${flagCode}.png`}
+              alt={`${name} flag`}
+              className="w-20 h-[54px] sm:w-28 sm:h-[75px] object-cover rounded-xl shadow-lg mx-auto mb-6"
+            />
             <h2 className="section-title mb-5">Ready to Study in {name}?</h2>
             <p className="section-subtitle mb-10">
               Take the first step today. Our consultants will guide you through every part of

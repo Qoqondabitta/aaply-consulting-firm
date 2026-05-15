@@ -5,6 +5,7 @@ export default function USA() {
     <CountryPage
       name="USA"
       flag="🇺🇸"
+      flagCode="us"
       heroImage="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=1920&q=80"
       overviewImage="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=900&q=80"
       tagline="Access the world's top-ranked universities with our comprehensive 5-application package."

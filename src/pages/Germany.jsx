@@ -5,6 +5,7 @@ export default function Germany() {
     <CountryPage
       name="Germany"
       flag="🇩🇪"
+      flagCode="de"
       heroImage="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1920&q=80"
       overviewImage="https://images.unsplash.com/photo-1587330979470-3595ac045ab0?w=900&q=80"
       tagline="Tuition-free public universities and world-leading engineering, research, and technology programs."

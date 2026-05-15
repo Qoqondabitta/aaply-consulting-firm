@@ -5,6 +5,7 @@ export default function Hungary() {
     <CountryPage
       name="Hungary"
       flag="🇭🇺"
+      flagCode="hu"
       heroImage="https://images.unsplash.com/photo-1551867633-194f125bddfa?w=1920&q=80"
       overviewImage="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=900&q=80"
       tagline="Prestigious European universities with 100% scholarship opportunities and November intake."

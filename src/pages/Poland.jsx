@@ -5,6 +5,7 @@ export default function Poland() {
     <CountryPage
       name="Poland"
       flag="🇵🇱"
+      flagCode="pl"
       heroImage="https://images.unsplash.com/photo-1519197924294-4ba991a11128?w=1920&q=80"
       overviewImage="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=900&q=80"
       tagline="Affordable European education with a growing job market, vibrant culture, and modern cities."
