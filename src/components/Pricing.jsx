@@ -114,7 +114,7 @@ export default function Pricing() {
               {/* Flag image + country */}
               <div className="mb-4">
                 <img
-                  src={`https://flagcdn.com/w40/${plan.flagCode}.png`}
+                  src={`https://flagcdn.com/w160/${plan.flagCode}.png`}
                   alt={`${plan.country} flag`}
                   className="w-10 h-7 object-cover rounded shadow-md"
                 />

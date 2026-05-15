@@ -42,18 +42,32 @@ export default function Contact() {
 
   const [form, setForm]   = useState({ name: '', email: '', country: '', message: '' })
   const [sent, setSent]   = useState(false)
+  const [error, setError] = useState(false)
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Study Abroad Inquiry — ${form.country || 'General'} — ${form.name}`)
-    const body    = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nCountry of Interest: ${form.country || 'Not specified'}\n\nMessage:\n${form.message}`
-    )
-    window.location.href = `mailto:a.apply.admission@gmail.com?subject=${subject}&body=${body}`
-    setSent(true)
-    setTimeout(() => setSent(false), 4000)
+    const data = new FormData()
+    data.append('form-name', 'contact')
+    data.append('name',    form.name)
+    data.append('email',   form.email)
+    data.append('country', form.country)
+    data.append('message', form.message)
+    try {
+      const res = await fetch('/', { method: 'POST', body: data })
+      if (res.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', country: '', message: '' })
+        setTimeout(() => setSent(false), 5000)
+      } else {
+        setError(true)
+        setTimeout(() => setError(false), 4000)
+      }
+    } catch {
+      setError(true)
+      setTimeout(() => setError(false), 4000)
+    }
   }
 
   return (
@@ -216,11 +230,14 @@ export default function Contact() {
               <button
                 type="submit"
                 className={`btn-primary w-full py-4 text-[15px] ${
-                  sent ? 'bg-emerald-500 hover:bg-emerald-500 text-white shadow-none' : ''
+                  sent   ? 'bg-emerald-500 hover:bg-emerald-500 text-white shadow-none' :
+                  error  ? 'bg-red-500 hover:bg-red-500 text-white shadow-none' : ''
                 }`}
               >
                 {sent ? (
-                  '✓ Your message has been sent!'
+                  '✓ Message sent! We\'ll be in touch soon.'
+                ) : error ? (
+                  '✗ Something went wrong — please try again.'
                 ) : (
                   <>Send Message <FaArrowRight className="text-xs" /></>
                 )}

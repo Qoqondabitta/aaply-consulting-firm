@@ -84,7 +84,7 @@ export default function CountryPage({
             className="mb-6"
           >
             <img
-              src={`https://flagcdn.com/w80/${flagCode}.png`}
+              src={`https://flagcdn.com/w320/${flagCode}.png`}
               alt={`${name} flag`}
               className="w-24 h-16 sm:w-32 sm:h-[86px] object-cover rounded-xl shadow-2xl mx-auto"
             />
@@ -295,7 +295,7 @@ export default function CountryPage({
                 </div>
               </div>
               <img
-                src={`https://flagcdn.com/w40/${flagCode}.png`}
+                src={`https://flagcdn.com/w160/${flagCode}.png`}
                 alt={`${name} flag`}
                 className="w-12 h-8 sm:w-16 sm:h-[43px] object-cover rounded-lg shadow-md"
               />
@@ -397,7 +397,7 @@ export default function CountryPage({
             viewport={{ once: true }}
           >
             <img
-              src={`https://flagcdn.com/w80/${flagCode}.png`}
+              src={`https://flagcdn.com/w320/${flagCode}.png`}
               alt={`${name} flag`}
               className="w-20 h-[54px] sm:w-28 sm:h-[75px] object-cover rounded-xl shadow-lg mx-auto mb-6"
             />

@@ -57,7 +57,7 @@ export default function Countries() {
                   {c.tag}
                 </span>
                 <img
-                  src={`https://flagcdn.com/w40/${c.flagCode}.png`}
+                  src={`https://flagcdn.com/w160/${c.flagCode}.png`}
                   alt={`${c.name} flag`}
                   className="w-9 h-6 object-cover rounded shadow-lg"
                 />
